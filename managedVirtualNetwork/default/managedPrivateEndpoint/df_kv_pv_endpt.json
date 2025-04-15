@@ -1,0 +1,10 @@
+{
+	"name": "df_kv_pv_endpt",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/98163876-b4d3-4128-ad45-c4c6a103c74c/resourceGroups/RG-DEV/providers/Microsoft.KeyVault/vaults/kvdev02384",
+		"groupId": "vault",
+		"fqdns": [
+			"kvdev02384.vault.azure.net"
+		]
+	}
+}
