@@ -10,9 +10,9 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "employee.csv",
-				"folderPath": "input",
-				"container": "democontainer"
+				"fileName": "stderr.txt",
+				"folderPath": "7af71e34-be65-4847-8bee-ad7ab3b095e8/output",
+				"container": "adfjobs"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
