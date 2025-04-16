@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "output",
-				"container": "democontainer"
+				"fileName": "output.txt",
+				"container": "demo"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
