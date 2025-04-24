@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "immutable.csv",
 				"folderPath": "outputnew",
 				"container": "democontainer"
 			},
