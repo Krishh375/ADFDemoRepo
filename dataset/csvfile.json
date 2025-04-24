@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "HREmployeesSink.csv",
+				"fileName": "ITEmployeesSink.csv",
 				"folderPath": "demo",
 				"container": "inputcontainer"
 			},
