@@ -422,7 +422,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "HREmployeesSink.csv",
+						"fileName": "ITEmployeesSink.csv",
 						"folderPath": "demo",
 						"container": "inputcontainer"
 					},
@@ -525,7 +525,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "outputdataset",
+								"referenceName": "sinkcsv",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -540,7 +540,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/csvfile')]",
-				"[concat(variables('factoryId'), '/datasets/outputdataset')]"
+				"[concat(variables('factoryId'), '/datasets/sinkcsv')]"
 			]
 		},
 		{
