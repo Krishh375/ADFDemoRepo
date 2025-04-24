@@ -1,0 +1,201 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "DF-AZ-DEV"
+		},
+		"AzureBatch_ls_accessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessKey' of 'AzureBatch_ls'"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"HttpServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HttpServer1'"
+		},
+		"ls_az_dev_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_az_dev'"
+		},
+		"AzureBatch_ls_properties_typeProperties_batchUri": {
+			"type": "string",
+			"defaultValue": "https://azbatchdemo.eastus.batch.azure.com"
+		},
+		"AzureBatch_ls_properties_typeProperties_poolName": {
+			"type": "string",
+			"defaultValue": "batch12"
+		},
+		"AzureBatch_ls_properties_typeProperties_accountName": {
+			"type": "string",
+			"defaultValue": "azbatchdemo"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "free-sql-mi-5213063.23d6faffe15a.database.windows.net"
+		},
+		"HttpServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "krishh"
+		},
+		"az_kv_acckey_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kvdev02384.vault.azure.net/"
+		},
+		"AzureBlobStorage765_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/98163876-b4d3-4128-ad45-c4c6a103c74c/resourceGroups/az-learn/providers/Microsoft.Storage/storageAccounts/azlearnsagen2"
+		},
+		"AzureBlobStorage765_properties_groupId": {
+			"type": "string",
+			"defaultValue": "blob"
+		},
+		"AzureBlobStorage765_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"azlearnsagen2.blob.core.windows.net"
+			]
+		},
+		"AzureSqlDatabase823_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/98163876-b4d3-4128-ad45-c4c6a103c74c/resourceGroups/az-learn/providers/Microsoft.Sql/servers/azlearndb"
+		},
+		"AzureSqlDatabase823_properties_groupId": {
+			"type": "string",
+			"defaultValue": "sqlServer"
+		},
+		"AzureSqlDatabase823_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"azlearndb.database.windows.net"
+			]
+		},
+		"df_kv_pv_endpt_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/98163876-b4d3-4128-ad45-c4c6a103c74c/resourceGroups/RG-DEV/providers/Microsoft.KeyVault/vaults/kvdev02384"
+		},
+		"df_kv_pv_endpt_properties_groupId": {
+			"type": "string",
+			"defaultValue": "vault"
+		},
+		"df_kv_pv_endpt_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"kvdev02384.vault.azure.net"
+			]
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "DF-AZ-DEV_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"HttpServer1_password": {
+						"value": "[parameters('HttpServer1_password')]"
+					},
+					"ls_az_dev_connectionString": {
+						"value": "[parameters('ls_az_dev_connectionString')]"
+					},
+					"AzureBatch_ls_accessKey": {
+						"value": "[parameters('AzureBatch_ls_accessKey')]"
+					},
+					"HttpServer1_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
+					},
+					"HttpServer1_properties_typeProperties_userName": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_userName')]"
+					},
+					"az_kv_acckey_properties_typeProperties_baseUrl": {
+						"value": "[parameters('az_kv_acckey_properties_typeProperties_baseUrl')]"
+					},
+					"AzureBlobStorage765_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureBlobStorage765_properties_privateLinkResourceId')]"
+					},
+					"AzureBlobStorage765_properties_groupId": {
+						"value": "[parameters('AzureBlobStorage765_properties_groupId')]"
+					},
+					"AzureBlobStorage765_properties_fqdns": {
+						"value": "[parameters('AzureBlobStorage765_properties_fqdns')]"
+					},
+					"AzureSqlDatabase823_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureSqlDatabase823_properties_privateLinkResourceId')]"
+					},
+					"AzureSqlDatabase823_properties_groupId": {
+						"value": "[parameters('AzureSqlDatabase823_properties_groupId')]"
+					},
+					"AzureSqlDatabase823_properties_fqdns": {
+						"value": "[parameters('AzureSqlDatabase823_properties_fqdns')]"
+					},
+					"df_kv_pv_endpt_properties_privateLinkResourceId": {
+						"value": "[parameters('df_kv_pv_endpt_properties_privateLinkResourceId')]"
+					},
+					"df_kv_pv_endpt_properties_groupId": {
+						"value": "[parameters('df_kv_pv_endpt_properties_groupId')]"
+					},
+					"df_kv_pv_endpt_properties_fqdns": {
+						"value": "[parameters('df_kv_pv_endpt_properties_fqdns')]"
+					},
+					"AzureBatch_ls_properties_typeProperties_batchUri": {
+						"value": "[parameters('AzureBatch_ls_properties_typeProperties_batchUri')]"
+					},
+					"AzureBatch_ls_properties_typeProperties_poolName": {
+						"value": "[parameters('AzureBatch_ls_properties_typeProperties_poolName')]"
+					},
+					"AzureBatch_ls_properties_typeProperties_accountName": {
+						"value": "[parameters('AzureBatch_ls_properties_typeProperties_accountName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "DF-AZ-DEV_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'DF-AZ-DEV_ArmTemplate_0')]"
+			]
+		}
+	]
+}

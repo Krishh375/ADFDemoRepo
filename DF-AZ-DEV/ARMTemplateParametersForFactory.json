@@ -1,0 +1,72 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "DF-AZ-DEV"
+		},
+		"AzureBatch_ls_accessKey": {
+			"value": ""
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"HttpServer1_password": {
+			"value": ""
+		},
+		"ls_az_dev_connectionString": {
+			"value": ""
+		},
+		"AzureBatch_ls_properties_typeProperties_batchUri": {
+			"value": "https://azbatchdemo.eastus.batch.azure.com"
+		},
+		"AzureBatch_ls_properties_typeProperties_poolName": {
+			"value": "batch12"
+		},
+		"AzureBatch_ls_properties_typeProperties_accountName": {
+			"value": "azbatchdemo"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"value": "free-sql-mi-5213063.23d6faffe15a.database.windows.net"
+		},
+		"HttpServer1_properties_typeProperties_userName": {
+			"value": "krishh"
+		},
+		"az_kv_acckey_properties_typeProperties_baseUrl": {
+			"value": "https://kvdev02384.vault.azure.net/"
+		},
+		"AzureBlobStorage765_properties_privateLinkResourceId": {
+			"value": "/subscriptions/98163876-b4d3-4128-ad45-c4c6a103c74c/resourceGroups/az-learn/providers/Microsoft.Storage/storageAccounts/azlearnsagen2"
+		},
+		"AzureBlobStorage765_properties_groupId": {
+			"value": "blob"
+		},
+		"AzureBlobStorage765_properties_fqdns": {
+			"value": [
+				"azlearnsagen2.blob.core.windows.net"
+			]
+		},
+		"AzureSqlDatabase823_properties_privateLinkResourceId": {
+			"value": "/subscriptions/98163876-b4d3-4128-ad45-c4c6a103c74c/resourceGroups/az-learn/providers/Microsoft.Sql/servers/azlearndb"
+		},
+		"AzureSqlDatabase823_properties_groupId": {
+			"value": "sqlServer"
+		},
+		"AzureSqlDatabase823_properties_fqdns": {
+			"value": [
+				"azlearndb.database.windows.net"
+			]
+		},
+		"df_kv_pv_endpt_properties_privateLinkResourceId": {
+			"value": "/subscriptions/98163876-b4d3-4128-ad45-c4c6a103c74c/resourceGroups/RG-DEV/providers/Microsoft.KeyVault/vaults/kvdev02384"
+		},
+		"df_kv_pv_endpt_properties_groupId": {
+			"value": "vault"
+		},
+		"df_kv_pv_endpt_properties_fqdns": {
+			"value": [
+				"kvdev02384.vault.azure.net"
+			]
+		}
+	}
+}
