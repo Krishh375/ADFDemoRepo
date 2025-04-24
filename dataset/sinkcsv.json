@@ -1,0 +1,24 @@
+{
+	"name": "sinkcsv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_az_dev",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "immutable.csv",
+				"folderPath": "outputnew",
+				"container": "democontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
