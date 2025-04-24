@@ -55,7 +55,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "outputdataset",
+						"referenceName": "sinkcsv",
 						"type": "DatasetReference"
 					}
 				]
